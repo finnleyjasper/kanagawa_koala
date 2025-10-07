@@ -1,0 +1,5 @@
+STYLE RULES ====================================================================
+- If an item in the hierarchy uses camelCase a script accesses its name directly
+
+DONT DESTROY ON LOAD // SINGLETON ==============================================
+- DialogueManager
