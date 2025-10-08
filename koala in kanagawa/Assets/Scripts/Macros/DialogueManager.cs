@@ -53,16 +53,22 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
+            Debug.Log("Dialogue ended");
+
             dialogueActive = true;
             uiText.text = dialogue[currentDialogueIndex];
+            currentDialogueIndex += 1;
         }
     }
 
-    private void OnMouseDown()
+    void Update()
     {
-        if (dialogueActive)
+        if (Input.GetMouseButtonDown(0))
         {
-            ShowNextLine();
+            if (dialogueActive)
+            {
+                ShowNextLine();
+            }
         }
     }
 
@@ -76,7 +82,7 @@ public class DialogueManager : MonoBehaviour
         uiText.text = dialogue[currentDialogueIndex];
         currentDialogueIndex += 1;
 
-        if (currentDialogueIndex > dialogue.Count)
+        if (currentDialogueIndex >= dialogue.Count)
         {
            EndDialogue();
         }
@@ -84,6 +90,8 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
+        Debug.Log("Dialogue ended");
+
         dialogueActive = false;
         dialogue.Clear();
         currentDialogueIndex = 0;
