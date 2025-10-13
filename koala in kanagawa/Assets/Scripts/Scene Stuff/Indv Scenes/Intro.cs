@@ -4,19 +4,13 @@ using UnityEngine.SceneManagement;
 
 public class Intro : MonoBehaviour
 {
-    [SerializeField]
-    private List<string> koalaDialogue = new List<string> {
-        "G'day!",
-        "My name is Koala.",
-        "Thank goodness you're here...",
-        "Life in Japan is quite different from my home down under.",
-        "I could use the extra help getting through the day!",
-        "Let's go!!!"};
+    [SerializeField] private List<DialogueLine> koalaDialogue;
 
     void Start()
     {
         DialogueManager.Instance.AddDialogue(koalaDialogue);
-        DialogueManager.Instance.StartDialogue();
+        GameObject koala = GameObject.Find("head");
+        DialogueManager.Instance.StartDialogue(koala);
     }
 
     void Update()

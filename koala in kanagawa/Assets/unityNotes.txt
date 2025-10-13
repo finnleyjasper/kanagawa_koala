@@ -1,0 +1,13 @@
+EDITOR THINGOS ====================================================================
+
+[Header("Header Text")] --- For titles in the editor
+[Space] --- Leave a space
+[Tooltip("text")] --- Hover to provide more info
+
+[Range(min, max)] --- uhh??
+
+[CreateAssetMenu(fileName = "NewMyCustomData", menuName = "Custom/My Custom Data", order = 1)]
+    - fileName: This specifies the default name for the new asset file created from this menu item.
+    - menuName: This defines the path and name of the menu item within the "Assets/Create" menu. Use slashes (/) to create submenus (e.g., "Custom/My Custom Data").
+    - order: This optional parameter determines the position of your menu item relative to others within the same menu. Lower numbers appear higher in the list.
+

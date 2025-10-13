@@ -1,5 +1,8 @@
 STYLE RULES ====================================================================
 - If an item in the hierarchy uses camelCase a script accesses its name directly
+    - OR if it is a one-word-name and in lowercase, it is accessed directly via name -- ie. "koala" or "head"
+
+- All "active speakers" need a child gameObject called "Head"
 
 DONT DESTROY ON LOAD // SINGLETON ==============================================
 - DialogueManager

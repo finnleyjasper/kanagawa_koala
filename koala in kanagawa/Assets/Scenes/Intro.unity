@@ -720,6 +720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueActive: 0
+  activeSpeaker: {fileID: 0}
 --- !u!114 &1816814314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -733,12 +734,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   koalaDialogue:
-  - G'day!
-  - My name is Koala.
-  - Thank goodness you're here...
-  - Life in Japan is quite different from my home down under.
-  - I could use the extra help getting through the day!
-  - Let's go!!!
+  - {fileID: 11400000, guid: f90a127a1aefe49a0894b3a13534d38f, type: 2}
+  - {fileID: 11400000, guid: a35bd36627a8f4e119cf30ba514c4f74, type: 2}
 --- !u!1001 &7948795706733149797
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -749,12 +746,24 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1416841720763466480, guid: 756aea9308cb24b31bc30a2b49ddb5dc, type: 3}
       propertyPath: m_Name
-      value: Koala
+      value: koala
+      objectReference: {fileID: 0}
+    - target: {fileID: 1661630986436092767, guid: 756aea9308cb24b31bc30a2b49ddb5dc, type: 3}
+      propertyPath: m_Name
+      value: Body
       objectReference: {fileID: 0}
     - target: {fileID: 4230961500116837619, guid: 756aea9308cb24b31bc30a2b49ddb5dc, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -3886576657954965091, guid: 7b383b94df2da4c17a7864b46e0042f7, type: 3}
+    - target: {fileID: 4902137923187618486, guid: 756aea9308cb24b31bc30a2b49ddb5dc, type: 3}
+      propertyPath: m_Name
+      value: Right arm
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601871826603318973, guid: 756aea9308cb24b31bc30a2b49ddb5dc, type: 3}
+      propertyPath: m_Name
+      value: head
+      objectReference: {fileID: 0}
     - target: {fileID: 6704773178221897724, guid: 756aea9308cb24b31bc30a2b49ddb5dc, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.86380327
@@ -834,6 +843,10 @@ PrefabInstance:
     - target: {fileID: 8198744638164047111, guid: 756aea9308cb24b31bc30a2b49ddb5dc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 9051356123993679345, guid: 756aea9308cb24b31bc30a2b49ddb5dc, type: 3}
+      propertyPath: m_Name
+      value: Left arm
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
