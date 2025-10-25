@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc71c24afdad844f5af2e62de9e24dbf, type: 3}
-  m_Name: 2
+  m_Script: {fileID: 11500000, guid: 982b2a3fb6cf34bae9de1ab9d67ec949, type: 3}
+  m_Name: rightArmOut
   m_EditorClassIdentifier: 
-  text: Nice to see ya, bud!
-  expression: {fileID: 8151571854843481539, guid: f2ecdfd56c2ed47b1b1629e47e6b2a99, type: 3}
-  shown: 0
+  tag: rightArm
+  sprite: {fileID: -6162732427867685237, guid: 7b383b94df2da4c17a7864b46e0042f7, type: 3}

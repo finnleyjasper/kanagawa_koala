@@ -9,7 +9,9 @@ public class Intro : MonoBehaviour
     void Start()
     {
         DialogueManager.Instance.AddDialogue(koalaDialogue);
-        GameObject koala = GameObject.Find("head");
+
+        DialogueGameObject koala = GameObject.Find("koala").GetComponent<DialogueGameObject>();
+
         DialogueManager.Instance.StartDialogue(koala);
     }
 

@@ -4,5 +4,8 @@ STYLE RULES ====================================================================
 
 - All "active speakers" need a child gameObject called "Head"
 
+IN-EDITOR RULES ================================================================
+- Cant be assed fixing the dialogue thing so just duplicate every final line of dialogue woohoo
+
 DONT DESTROY ON LOAD // SINGLETON ==============================================
 - DialogueManager

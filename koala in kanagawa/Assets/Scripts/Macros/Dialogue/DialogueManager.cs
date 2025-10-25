@@ -14,8 +14,11 @@ public class DialogueManager : MonoBehaviour
     private GameObject canvas;
     private TMP_Text uiText;
 
-    public bool dialogueActive = false;
-    public GameObject activeSpeaker; // set in StartDialogue -- reset to null in enddialogue() -- JUST THE HEAD???
+    // seperated into two states so the last line can stay visible even if dialogue isnt "active"
+    public bool dialogueActive = false; // actively providing new dialogue - more to see
+    public bool dialogueVisible = false; // if the window is still up
+
+    public DialogueGameObject activeSpeaker; // set in StartDialogue -- reset to null in enddialogue() -- JUST THE HEAD???
 
     private void Awake()
     {
@@ -47,8 +50,10 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void StartDialogue(GameObject activeSpeaker) // called once when dialogue is started
+    public void StartDialogue(DialogueGameObject newActiveSpeaker) // called once when dialogue is started
     {
+        activeSpeaker = newActiveSpeaker;
+
         if (dialogue.Count < 0)
         {
             Debug.LogError("No dialogue is loaded!");
@@ -59,8 +64,9 @@ public class DialogueManager : MonoBehaviour
             Debug.Log("Dialogue started");
 
             dialogueActive = true;
-            SpriteRenderer expressionSpriteRenderer = activeSpeaker.GetComponent<SpriteRenderer>();
-            dialogue[currentDialogueIndex].Show(uiText, expressionSpriteRenderer);
+            dialogueVisible = true;
+
+            dialogue[currentDialogueIndex].Show(uiText, activeSpeaker);
             currentDialogueIndex += 1;
         }
 
@@ -79,6 +85,11 @@ public class DialogueManager : MonoBehaviour
             {
                 ShowNextLine();
             }
+
+            if (!dialogueActive && dialogueVisible)
+            {
+                CloseDialogue();
+            }
         }
     }
 
@@ -89,7 +100,7 @@ public class DialogueManager : MonoBehaviour
             dialogueActive = true;
         }
 
-        dialogue[currentDialogueIndex].Show(uiText, activeSpeaker.GetComponent<SpriteRenderer>());
+        dialogue[currentDialogueIndex].Show(uiText, activeSpeaker);
         currentDialogueIndex += 1;
 
         if (currentDialogueIndex >= dialogue.Count)
@@ -103,11 +114,14 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("Dialogue ended");
 
         dialogueActive = false;
+    }
+
+    public void CloseDialogue()
+    {
         dialogue.Clear();
         currentDialogueIndex = 0;
 
         activeSpeaker = null;
-
     }
 
 }
