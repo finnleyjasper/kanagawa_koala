@@ -8,12 +8,12 @@ using Unity.VisualScripting;
 [CreateAssetMenu(fileName = "DialogueLine", menuName = "Dialogue", order = 1)]
 public class DialogueLine : ScriptableObject
 {
-    [SerializeField] private string text;
+    [SerializeField] public string text;
     [SerializeField] private DialogueSpriteUpdate[] newSprites;
 
     public bool shown = false;
 
-    public void Start()
+    public void Awake()
     {
         newSprites = new DialogueSpriteUpdate[0];
     }

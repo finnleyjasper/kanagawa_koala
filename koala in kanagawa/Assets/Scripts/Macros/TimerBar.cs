@@ -6,15 +6,12 @@ public class TimerBar : MonoBehaviour
 {
     public Slider slider;
     public float sliderTimer;
-    public bool stopTimer = false;
+    public bool timerStopped = false;
 
     void Start()
     {
         slider.maxValue = sliderTimer;
         slider.value = sliderTimer;
-
-        // REMOVE WHEN FINISHED - this should get called from a game manager or scene manager or something
-        StartTimer();
     }
 
     public void StartTimer()
@@ -24,17 +21,17 @@ public class TimerBar : MonoBehaviour
 
     IEnumerator StartTimerTicker()
     {
-        while (!stopTimer)
+        while (!timerStopped)
         {
             sliderTimer -= Time.deltaTime;
             yield return new WaitForSeconds(0.001f);
 
             if (sliderTimer <= 0)
             {
-                stopTimer = true;
+                timerStopped = true;
             }
 
-            if (!stopTimer)
+            if (!timerStopped)
             {
                 slider.value = sliderTimer;
             }

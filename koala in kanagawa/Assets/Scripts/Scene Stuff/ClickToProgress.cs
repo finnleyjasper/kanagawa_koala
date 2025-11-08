@@ -7,20 +7,7 @@ public class LoadNextSceneOnClick : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            LoadNextScene();
+            GameManager.Instance.LoadNextScene();
         }
-    }
-
-    private void LoadNextScene()
-    {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        int nextSceneIndex = currentSceneIndex + 1;
-
-        if (nextSceneIndex >= SceneManager.sceneCountInBuildSettings)
-        {
-            nextSceneIndex = 0;
-        }
-
-        SceneManager.LoadScene(nextSceneIndex);
     }
 }

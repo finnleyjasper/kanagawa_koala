@@ -6,7 +6,7 @@ public class Intro : MonoBehaviour
 {
     [SerializeField] private List<DialogueLine> koalaDialogue;
 
-    void Start()
+    void Awake()
     {
         DialogueManager.Instance.AddDialogue(koalaDialogue);
 
@@ -17,19 +17,12 @@ public class Intro : MonoBehaviour
 
     void Update()
     {
-        if (!DialogueManager.Instance.dialogueActive)
+        if (!DialogueManager.Instance.dialogueVisible)
         {
             if (Input.GetMouseButtonDown(0))
             {
-                int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-                int nextSceneIndex = currentSceneIndex + 1;
-
-                if (nextSceneIndex >= SceneManager.sceneCountInBuildSettings)
-                {
-                    nextSceneIndex = 0;
-                }
-
-                SceneManager.LoadScene(nextSceneIndex);
+                GameManager.Instance.currentSceneType = GameManager.SceneType.Instruction;
+                GameManager.Instance.LoadNextScene();
             }
         }
     }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 using UnityEngine.UI;
 using TMPro;
 using Unity.VisualScripting;
@@ -18,7 +19,7 @@ public class DialogueManager : MonoBehaviour
     public bool dialogueActive = false; // actively providing new dialogue - more to see
     public bool dialogueVisible = false; // if the window is still up
 
-    public DialogueGameObject activeSpeaker; // set in StartDialogue -- reset to null in enddialogue() -- JUST THE HEAD???
+    public DialogueGameObject activeSpeaker; // set in StartDialogue
 
     private void Awake()
     {
@@ -33,11 +34,18 @@ public class DialogueManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    void Start()
+    private void FindCanvasUI()
     {
-        // FIND UI STUFF
-        canvas = GameObject.Find("DialogueCanvas");
-        uiText = canvas.GetComponentInChildren<TMP_Text>();
+        try
+        {
+            // FIND UI STUFF
+            canvas = GameObject.Find("DialogueCanvas");
+            uiText = canvas.GetComponentInChildren<TMP_Text>();
+        }
+        catch
+        {
+            Debug.Log("DialogueUI could not be found");
+        }
     }
 
     public void AddDialogue(List<DialogueLine> newDialogue)
@@ -46,12 +54,15 @@ public class DialogueManager : MonoBehaviour
 
         foreach (DialogueLine dialogueLine in newDialogue)
         {
+            //DEBUGGING -- Debug.Log("Added dialogue line: " + dialogueLine.text);
             dialogue.Add(dialogueLine);
         }
     }
 
     public void StartDialogue(DialogueGameObject newActiveSpeaker) // called once when dialogue is started
     {
+        FindCanvasUI();
+
         activeSpeaker = newActiveSpeaker;
 
         if (dialogue.Count < 0)
@@ -65,6 +76,9 @@ public class DialogueManager : MonoBehaviour
 
             dialogueActive = true;
             dialogueVisible = true;
+
+            Debug.Log("UI text is" + uiText.gameObject.name);
+            Debug.Log("ActiveSpeaker is" + uiText.gameObject.name);
 
             dialogue[currentDialogueIndex].Show(uiText, activeSpeaker);
             currentDialogueIndex += 1;
@@ -95,17 +109,12 @@ public class DialogueManager : MonoBehaviour
 
     private void ShowNextLine()
     {
-        if (!dialogueActive) // p sure this isnt needed?? oh well?
-        {
-            dialogueActive = true;
-        }
-
         dialogue[currentDialogueIndex].Show(uiText, activeSpeaker);
         currentDialogueIndex += 1;
 
         if (currentDialogueIndex >= dialogue.Count)
         {
-           EndDialogue();
+            EndDialogue();
         }
     }
 
@@ -118,10 +127,13 @@ public class DialogueManager : MonoBehaviour
 
     public void CloseDialogue()
     {
+        Debug.Log("Dialogue closed");
+
         dialogue.Clear();
         currentDialogueIndex = 0;
 
         activeSpeaker = null;
+        dialogueVisible = false;
     }
 
 }

@@ -1,19 +1,16 @@
 fileFormatVersion: 2
-guid: 7b383b94df2da4c17a7864b46e0042f7
+guid: b9a1cd89f0908446b81ab09cce537b4c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3886576657954965091
-    second: comic arms_0
+      213: -8824173285335777407
+    second: PleaseWaitPlaceholder_0
   - first:
-      213: -4138346858989204710
-    second: comic arms_1
+      213: 1726984574918263586
+    second: PleaseWaitPlaceholder_1
   - first:
-      213: 618202629369779230
-    second: comic arms_2
-  - first:
-      213: -6162732427867685237
-    second: comic arms_3
+      213: 613636698077492202
+    second: PleaseWaitPlaceholder_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,89 +119,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: comic arms_0
+      name: PleaseWaitPlaceholder_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 193
-        width: 25
-        height: 54
+        x: 0
+        y: 0
+        width: 107
+        height: 70
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d99f44e1f1b101ac0800000000000000
-      internalID: -3886576657954965091
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: comic arms_1
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 216
-        width: 52
-        height: 34
-      alignment: 9
-      pivot: {x: 0.15506238, y: 0.3716821}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a1b48982573a196c0800000000000000
-      internalID: -4138346858989204710
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: comic arms_2
-      rect:
-        serializedVersion: 2
-        x: 92
-        y: 190
-        width: 22
-        height: 45
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e145cca140c449800800000000000000
-      internalID: 618202629369779230
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: comic arms_3
-      rect:
-        serializedVersion: 2
-        x: 42
-        y: 174
-        width: 39
-        height: 40
-      alignment: 9
-      pivot: {x: 0.33840746, y: 0.46364212}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b8e7a272283997aa0800000000000000
-      internalID: -6162732427867685237
+      spriteID: da8a1c0b913bf4447a7b7d53c0e268e6
+      internalID: -8824173285335777407
       vertices: []
       indices: 
       edges: []
@@ -213,7 +144,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: b8e184001d0e34a908aeb35800b63196
+    spriteID: d9cfeb0deecd54504a6df5a8ff8c661a
     internalID: 0
     vertices: []
     indices: 
@@ -223,10 +154,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      comic arms_0: -3886576657954965091
-      comic arms_1: -4138346858989204710
-      comic arms_2: 618202629369779230
-      comic arms_3: -6162732427867685237
+      PleaseWaitPlaceholder_0: -8824173285335777407
+      PleaseWaitPlaceholder_1: 1726984574918263586
+      PleaseWaitPlaceholder_2: 613636698077492202
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

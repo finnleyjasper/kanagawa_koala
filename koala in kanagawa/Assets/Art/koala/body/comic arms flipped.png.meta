@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7b383b94df2da4c17a7864b46e0042f7
+guid: 8a45e7d92daf04ddc9fb46ce11974138
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -125,7 +125,7 @@ TextureImporter:
       name: comic arms_0
       rect:
         serializedVersion: 2
-        x: 4
+        x: 221
         y: 193
         width: 25
         height: 54
@@ -147,12 +147,12 @@ TextureImporter:
       name: comic arms_1
       rect:
         serializedVersion: 2
-        x: 34
-        y: 216
+        x: 164
+        y: 215
         width: 52
         height: 34
-      alignment: 9
-      pivot: {x: 0.15506238, y: 0.3716821}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -169,7 +169,7 @@ TextureImporter:
       name: comic arms_2
       rect:
         serializedVersion: 2
-        x: 92
+        x: 136
         y: 190
         width: 22
         height: 45
@@ -191,12 +191,12 @@ TextureImporter:
       name: comic arms_3
       rect:
         serializedVersion: 2
-        x: 42
+        x: 168
         y: 174
         width: 39
         height: 40
-      alignment: 9
-      pivot: {x: 0.33840746, y: 0.46364212}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
